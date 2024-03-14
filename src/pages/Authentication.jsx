@@ -42,5 +42,13 @@ export async function AuthenticationAction({ request }) {
     throw json({ message: "user can't authenticated" }, { status: 500 });
   }
 
+  // retrieving token from backend
+  const resData = await response.json();
+
+  const token = resData.token;
+  console.log(token);
+
+  localStorage.setItem("token", token);
+
   return redirect("/");
 }
