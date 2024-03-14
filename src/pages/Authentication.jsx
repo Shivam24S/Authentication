@@ -50,5 +50,11 @@ export async function AuthenticationAction({ request }) {
 
   localStorage.setItem("token", token);
 
+  // const expiration = new Date();
+  // expiration.setTime(expiration.getHours() + 1);
+  // console.log("time", expiration);
+
+  // localStorage.setItem("expiration", expiration.toISOString());
+
   return redirect("/");
 }
